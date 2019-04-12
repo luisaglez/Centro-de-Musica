@@ -1,0 +1,67 @@
+<div class="card mt-5">
+  <div class="card-body">
+<form #productoForm="ngForm"(ngSubmit)="onSubmit(productoForm)">
+  <input type= "hidden" name= "$key" #$key="ngModel"[(ngModel)]= "productoService.selectedProducto.$key">
+<div class="form-group">
+  <input 
+  type="text"
+  class="form-control"
+  name="categoria"
+  #categoria= "ngModel"
+  [(ngModel)]="productoService.selectedProducto.categoria" 
+  placeholder="Add Producto Categoria"
+  >
+</div>
+<div class="form-group">
+    <input 
+    type="text"
+    class="form-control"
+    name="nombre"
+    #nombre= "ngModel"
+    [(ngModel)]="productoService.selectedProducto.nombre" 
+    placeholder="Add Producto Nombre"
+    >
+  </div>
+  <div class="form-group">
+      <input 
+      type="text"
+      class="form-control"
+      name="codigo"
+      #codigo= "ngModel"
+      [(ngModel)]="productoService.selectedProducto.codigo" 
+      placeholder="Add Producto Codigo"
+      >
+    </div>
+    <div class="form-group">
+        <input 
+        type="text"
+        class="form-control"
+        name="material"
+        #material= "ngModel"
+        [(ngModel)]="productoService.selectedProducto.material" 
+        placeholder="Add Producto Material"
+        >
+      </div>
+      <div class="form-group">
+          <input 
+          type="text"
+          class="form-control"
+          name="precio"
+          #precio= "ngModel"
+          [(ngModel)]="productoService.selectedProducto.precio" 
+          placeholder="Add Producto Precio"
+          >
+        </div>
+        <div class= "form-group">
+          <button class="btn btn-primary" type= "submit">
+            <i class="fas fa-plus-circle"></i> Añadir Producto
+          </button>
+          <button class= "btn btn-secondary" type= "reset" (click)= "resetForm(productoForm)">
+            <i class= "fas fa-sync-alt"> </i> Limpiar
+          </button>
+        </div>
+
+</form>
+  </div>
+
+</div>
